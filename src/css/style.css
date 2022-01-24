@@ -1,0 +1,112 @@
+h2 {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+}
+
+p{
+    color: #212529;
+    font-size: 12px;
+}
+span{
+    font-size: 10px;
+    color: #868E96;
+}
+
+.container-carrinho {
+    width: 360px;
+    height: 630px;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.carrinho {
+    width: 100%;
+    height: 60px;
+    background-color: #FF2253;
+    border-radius: 15.0938px 15.0938px 0px 0px;
+    display: flex;
+}
+
+.carrinho img {
+    width: 15px;
+    height: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.carrinho h3 {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.carrinho-product {
+    position: relative;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: white;
+    display: flex;
+}
+
+.carrinho-product-description {
+    line-height: 20px;
+    margin-left: 7px;
+}
+
+.carrinho-product-description h2 button {
+    position: absolute;
+    right: 15px;
+    border: unset;
+    background-color: #F8F9FA;
+}
+.carrinho-product-description p {
+    margin-top: 5px;
+}
+
+.quantidade {
+    background-color: #F8F9FA;
+    height: 30px;
+    padding-top: 20px;
+    display: flex;
+}
+.quantidade p {
+    padding-left: 230px;
+    font-weight: bold;
+}
+.quantidade h2{
+    padding-left: 20px;
+}
+
+.total {
+    display: flex;
+    visibility: hidden;
+    margin-top: 20px;
+}
+.total h2 {
+    padding-left: 20px;
+}
+
+.total p {
+    padding-left: 250px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media (min-width:480px) {
+    .total{
+        visibility: unset;
+    }
+    .container-carrinho {
+        width: 300px;
+        height: 580px;
+        color: #FFFFFF;
+        margin: auto;
+    }
+    .quantidade p {
+        padding-left: 170px;
+    }
+    .total p {
+        padding-left: 190px;
+        }
+}
