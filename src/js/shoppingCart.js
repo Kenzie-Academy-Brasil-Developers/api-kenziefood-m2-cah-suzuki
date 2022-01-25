@@ -11,6 +11,7 @@ class ShoppingCart{
     showproducts() {
         return this.productList
     }
+    
     add(product) {
         let cart = document.getElementsByClassName("ul-carrinho")
 
