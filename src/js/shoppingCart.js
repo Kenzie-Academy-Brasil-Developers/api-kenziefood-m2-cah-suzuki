@@ -46,10 +46,11 @@ class ShoppingCart{
         
         p.innerText = "R$" + product.price
 
-        if (this.productList.length === 0) {
+        this.productList.push(product)
+        
+        if (this.productList.length === 1) {
             ul[0].innerHTML = ""
         }
-
         cart[0].appendChild(li)
         li.appendChild(img)
         li.appendChild(div)
@@ -58,8 +59,8 @@ class ShoppingCart{
         button.appendChild(buttonimg)
         div.appendChild(span)
         div.appendChild(p)
-
-        this.productList.push(product)
+        
+       
 
     }
     delete(evt) {
@@ -70,7 +71,27 @@ class ShoppingCart{
             }        
        }
        this.productList.splice(result, 1)
+
+       if(this.productList.length === 0) {
+        let div1 = document.createElement("div")
+        div1.className = "carrinho-no-product"
+        let div2 = document.createElement("div")
+        div2.className = "carrinho-desenho-caixa"
+        let div3 = document.createElement("div")
+        div3.className = "carrinho-desenho-dentro-da-caixa"
+        let h2box = document.createElement("h2")
+        h2box.innerText = "Ops!"
+        let pbox = document.createElement("p")
+        pbox.innerText = "Por enquanto não temos produtos no carrinho"
+
+        div1.appendChild(div2)
+        div2.appendChild(div3)
+        div1.appendChild(h2box)
+        div1.appendChild(pbox)
+        ul[0].appendChild(div1)
     }
+    }
+    
     //TODO Métodos ADD,DELETE,Functions
 }
 
@@ -84,10 +105,7 @@ ul[0].addEventListener('click', (evt) =>{
         element.remove()
         cart.delete(id - "")
     }
-    // adicionar "currentItens" e "currentPrice" ao botão de adicionar produto ao carrinho
-    // sem eles é necessário clicar em um dos itens para mostrar o preço atual e a quantidade de itens
     
-    //No momento ambas as funções itilizam a variavel "cart" para funcionarem, essa variavel foi feita apenas para test
     currentItens(cart)
     currentPrice(cart)
 })
