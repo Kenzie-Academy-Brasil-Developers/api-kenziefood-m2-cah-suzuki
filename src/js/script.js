@@ -1,6 +1,8 @@
+
 const productList = []
 let test
 let test2
+
 var product = new ApiClass().fetchProdutos().then((products)=>{
 
     for (let i=0;i<products.length;i++){
@@ -34,3 +36,43 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
     )
 
     let cart = new ShoppingCart()
+
+  function createLayout(data){
+    data.forEach(element => {
+    const listProducts  = document.getElementById("list-products")
+    const products      = document.createElement("li")
+    const imgProducts   = document.createElement("img")
+    const titleProducts = document.createElement("h2")
+    const descProducts  = document.createElement("p")
+    const divBuy        = document.createElement("div")
+    const spanPrice     = document.createElement("span")
+    const buttonToCart  = document.createElement("button")
+
+    products.classList.add("products")
+    imgProducts.classList.add("products-img")
+    titleProducts.classList.add("products-title")
+    descProducts.classList.add("products-description")
+    divBuy.classList.add("div-buy")
+    spanPrice.classList.add("produtcts-price")
+    buttonToCart.classList.add("button-add-cart")
+
+    imgProducts.src         = element.photo
+    titleProducts.innerText = element.name
+    descProducts.innerText  = element.description
+    spanPrice.innerText     = element.price
+    
+
+ 
+    listProducts.appendChild(products)
+    products.appendChild(imgProducts)
+    products.appendChild(titleProducts)
+    products.appendChild(descProducts)
+    products.appendChild(divBuy)
+    divBuy.appendChild(spanPrice)
+    divBuy.appendChild(buttonToCart)
+    })
+}
+  createLayout(productList)
+    ////
+  })
+
