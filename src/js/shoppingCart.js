@@ -80,7 +80,7 @@ class ShoppingCart{
         let div3 = document.createElement("div")
         div3.className = "carrinho-desenho-dentro-da-caixa"
         let h2box = document.createElement("h2")
-        h2box.innerText = "Ops!"
+        h2box.innerText = "OPS"
         let pbox = document.createElement("p")
         pbox.innerText = "Por enquanto não temos produtos no carrinho"
 
