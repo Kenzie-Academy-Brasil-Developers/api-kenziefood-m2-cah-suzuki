@@ -11,6 +11,7 @@ class ShoppingCart{
     showproducts() {
         return this.productList
     }
+    
     add(product) {
         let cart = document.getElementsByClassName("ul-carrinho")
 
@@ -42,7 +43,13 @@ class ShoppingCart{
         span.innerText = product.category
 
         let p = document.createElement("p")
+        
         p.innerText = "R$" + product.price
+
+        if (this.productList.length === 0) {
+            ul[0].innerHTML = ""
+        }
+
         cart[0].appendChild(li)
         li.appendChild(img)
         li.appendChild(div)
@@ -67,6 +74,8 @@ class ShoppingCart{
     //TODO Métodos ADD,DELETE,Functions
 }
 
+let cart = new ShoppingCart()
+let quantidade = document.getElementById("quantidade")
 let ul = document.getElementsByClassName("ul-carrinho")
 ul[0].addEventListener('click', (evt) =>{
     let id = evt.target.id
@@ -75,11 +84,23 @@ ul[0].addEventListener('click', (evt) =>{
         element.remove()
         cart.delete(id - "")
     }
-
+    // adicionar "currentItens" e "currentPrice" ao botão de adicionar produto ao carrinho
+    // sem eles é necessário clicar em um dos itens para mostrar o preço atual e a quantidade de itens
+    
+    //No momento ambas as funções itilizam a variavel "cart" para funcionarem, essa variavel foi feita apenas para test
+    currentItens(cart)
+    currentPrice(cart)
 })
-let noproduct = document.getElementsByClassName("carrinho-no-product")
-function car () {
-    if(cart.showproducts.length !== 0) {
-
-    }
+let price = document.getElementById("price")
+function currentItens(cart) {
+    quantidade.innerText = cart.showproducts().length
 }
+function currentPrice (cart) {
+    let result = 0
+    for(let i = 0; i < cart.showproducts().length; i++) {
+        result += cart.showproducts()[i].price
+    }
+    price.innerText = "R$" + (result + "")
+    return result
+}
+
