@@ -74,5 +74,5 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
 }
   createLayout(productList)
     ////
-  })
+  
 
