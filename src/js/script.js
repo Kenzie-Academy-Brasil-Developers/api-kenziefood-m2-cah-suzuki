@@ -35,8 +35,6 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
             productList[1].createdAt,)
     )
 
-    let cart = new ShoppingCart()
-
   function createLayout(data){
     data.forEach(element => {
     const listProducts  = document.getElementById("list-products")
@@ -73,6 +71,3 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
     })
 }
   createLayout(productList)
-    ////
-  })
-
