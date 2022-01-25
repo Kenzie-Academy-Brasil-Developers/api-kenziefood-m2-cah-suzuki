@@ -54,26 +54,11 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
     }
     console.log(productList)
     createLayout(productList)
-
-  }).then(res => test = new Product(productList[0].name,
-    productList[0].photo,
-    productList[0].description,
-    productList[0].category,
-    productList[0].price,
-    productList[0].id,
-    productList[0].updatedAt,
-    productList[0].createdAt,)).then(
-        res => test2 = new Product(productList[1].name,
-            productList[1].photo,
-            productList[1].description,
-            productList[1].category,
-            productList[1].price,
-            productList[1].id,
-            productList[1].updatedAt,
-            productList[1].createdAt,)
-    )
-
     let cart = new ShoppingCart()
+    cart.add(productList[0])
+
+  })
+  
 
 
  
