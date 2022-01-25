@@ -15,7 +15,7 @@
     --button-add-to-cart-color: #E4F7EF;
 }
 
-/* HIDDEN SCROLLBARS
+/* HIDDEN SCROLLBARS*/
 ::-webkit-scrollbar {
     display: none;
 }
@@ -25,10 +25,10 @@
   }
 * {
     scrollbar-width: none;
-} */
+} 
 
 body{
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     width: 100vw;
 }
 
@@ -72,7 +72,6 @@ body{
 
 .container-produtos{
     max-width: 300px;
-    margin: auto;
 }
 
 .nav-filters{
@@ -199,66 +198,11 @@ body{
    align-self: flex-end;
 }
 
-.container-carrinho{
+/* CONTAINER CART */
+/* .container-carrinho{
     max-width: 300px;
     margin: auto;
-}
-
-/* MEDIA QUERYS */
-
-@media screen and (min-width: 768px) {
-    .main{
-        display: flex;
-    }
-
-    .input-search{
-        width: 500px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .main{
-        display: flex;
-    }
-
-    body{
-        background-color: var(--background-body-desktop);
-    }
-
-    .container-pesquisa{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .container-produtos{
-        max-width: 800px;
-        margin: auto;
-    }
-
-    .header{
-        margin-top: 30px;
-    }
-
-    .input-search{
-        width: 311px;
-    }
-
-h2 {
-    font-size: 14px;
-    color: #000000;
-    font-weight: bold;
-}
-
-p{
-    color: #212529;
-    font-size: 12px;
-}
-span{
-    font-size: 10px;
-    color: #868E96;
-}
-
+} */
 .container-carrinho {
     width: 360px;
     height: 630px;
@@ -338,9 +282,9 @@ span{
     font-weight: bold;
     font-size: 14px;
 }
-}
 
-@media (min-width:480px) {
+/* MEDIA QUERYS */
+@media screen and (min-width:480px) {
     .total{
         visibility: unset;
     }
@@ -358,3 +302,73 @@ span{
     }
 
 }
+
+@media screen and (min-width: 768px) {
+    .main{
+        display: flex;
+    }
+
+    .input-search{
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* .main{
+        display: flex;
+    } */
+
+    body{
+        background-color: var(--background-body-desktop);
+    }
+
+    .container-pesquisa{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container-produtos{
+        max-width: 975px;
+       
+    }
+
+    .header{
+        margin-top: 30px;
+    }
+
+    .input-search{
+        width: 311px;
+    }
+
+    .list-products{
+        flex-flow: row wrap;
+    }
+
+    .products{
+        width: 300px;
+    }
+
+    h2 {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    }
+
+    p{
+    color: #212529;
+    font-size: 12px;
+    }
+
+    span{
+    font-size: 10px;
+    color: #868E96;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .list-products{
+        height: 700px;
+    }
+}   
