@@ -13,5 +13,12 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
         productList.push(productTemporary)                  
     }
     console.log(productList)
+
+  console.log(product)
+
+
+    ////
   })
 
+
+  
