@@ -93,6 +93,38 @@ span{
     font-size: 14px;
 }
 
+
+.carrinho-desenho-caixa {
+    border: 2px solid #868E96;
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10%;
+}
+.carrinho-desenho-dentro-da-caixa {
+    height: 10px;
+    width: 20px;
+    margin: auto;
+    margin-top: 10px;
+    border-bottom: 4px solid #868E96;
+    border-radius: 100%;
+}
+.carrinho-no-product {
+    height: 200px;
+    text-align: center;
+}
+.carrinho-no-product h2 {
+    color: #868E96;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.carrinho-no-product p {
+    color: #868E96;
+    width: 150px;
+    margin: auto;
+}
 @media (min-width:480px) {
     .total{
         visibility: unset;
