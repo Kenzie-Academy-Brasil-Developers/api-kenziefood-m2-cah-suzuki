@@ -1,11 +1,10 @@
 
 const productList = []
-let test
-let test2
+let elementId = []
+const listProducts  = document.getElementById("list-products")
 
 function createLayout(data){
   data.forEach(element => {
-  const listProducts  = document.getElementById("list-products")
   const products      = document.createElement("li")
   const imgProducts   = document.createElement("img")
   const titleProducts = document.createElement("h2")
@@ -21,6 +20,7 @@ function createLayout(data){
   divBuy.classList.add("div-buy")
   spanPrice.classList.add("produtcts-price")
   buttonToCart.classList.add("button-add-cart")
+  buttonToCart.id = "id" + (element.id + "")
 
   imgProducts.src         = element.photo
   titleProducts.innerText = element.name
@@ -54,13 +54,15 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
     }
     console.log(productList)
     createLayout(productList)
-    cart.add(productList[0])
-    cart.add(productList[1])
-    cart.add(productList[2])
   })
-  
 
-
+listProducts.addEventListener("click", (evn) => {
+  if(evn.target.className === "button-add-cart"){
+    cart.add(productList[evn.target.id.split("")[2] - 1])
+}
+  currentItens(cart)
+  currentPrice(cart)
+})
  
   
 
