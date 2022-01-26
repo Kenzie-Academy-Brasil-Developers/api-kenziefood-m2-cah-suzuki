@@ -2,6 +2,7 @@
 const productList = []
 const myProductList = []
 let elementId = []
+let api = new ApiClass()
 const listProducts  = document.getElementById("list-products")
 const navFilters    = document.getElementById("nav-filters")
 
@@ -49,7 +50,7 @@ function createLayout(data){
   })
 }
 
-let product = new ApiClass().fetchProdutos().then((products)=>{
+api.fetchProdutos().then((products)=>{
 
 
     for (let i=0;i<products.length;i++){
@@ -133,7 +134,7 @@ listProducts.addEventListener("click", (evn) => {
 
 })
 
-// let post = new ApiClass().postProdutos({
+// api.postProdutos({
 //   "nome": "Bolinho",
 // 	"preco": 5,
 // 	"categoria": "Doce",
@@ -141,7 +142,7 @@ listProducts.addEventListener("click", (evn) => {
 // 	"descricao" : "Lorem ipsum"
 // })
 
-let getMyProduct = new ApiClass().getMeusProdutos().then((products)=>{
+api.getMeusProdutos().then((products)=>{
 
   for (let i=0;i<products.length;i++){
       let productTemporary = new Product(products[i].nome,
