@@ -1,3 +1,5 @@
+let carrinho = document.getElementsByClassName("ul-carrinho")
+let storage = []
 class ShoppingCart{
     constructor(productList,totalPrice,totalItens){
         this.productList = []
@@ -13,7 +15,6 @@ class ShoppingCart{
     }
     
     add(product) {
-        let cart = document.getElementsByClassName("ul-carrinho")
 
         let li = document.createElement("li")
         li.className = "carrinho-product"
@@ -51,7 +52,7 @@ class ShoppingCart{
         if (this.productList.length === 1) {
             ul[0].innerHTML = ""
         }
-        cart[0].appendChild(li)
+        carrinho[0].appendChild(li)
         li.appendChild(img)
         li.appendChild(div)
         div.appendChild(h2)
@@ -59,11 +60,13 @@ class ShoppingCart{
         button.appendChild(buttonimg)
         div.appendChild(span)
         div.appendChild(p)
-        
-       
 
+        localStorage.setItem(product.id, JSON.stringify(product))
+        storage.push(product.id)
+        localStorage.setItem("productid", storage)
     }
     delete(evt) {
+        console.log(evt)
         let result = 0
        for (let i = 0; i < this.productList.length; i++) {
             if (this.productList[i].id === evt) {
@@ -80,7 +83,7 @@ class ShoppingCart{
         let div3 = document.createElement("div")
         div3.className = "carrinho-desenho-dentro-da-caixa"
         let h2box = document.createElement("h2")
-        h2box.innerText = "OPS"
+        h2box.innerText = "Ops!"
         let pbox = document.createElement("p")
         pbox.innerText = "Por enquanto não temos produtos no carrinho"
 
@@ -89,7 +92,16 @@ class ShoppingCart{
         div1.appendChild(h2box)
         div1.appendChild(pbox)
         ul[0].appendChild(div1)
+        
+        
     }
+    for(let i = 0; i < storage.length;i++) {
+        if (storage[i] === evt) {
+            storage.splice(i,1)
+            console.log(evt)
+        }
+    }
+    localStorage.productid = storage
     }
     
     //TODO Métodos ADD,DELETE,Functions
@@ -121,4 +133,15 @@ function currentPrice (cart) {
     price.innerText = "R$" + (result + "")
     return result
 }
+
+const runLocalStorage = () => {
+    if (localStorage.length > 0) {
+        let ids = localStorage.productid.split(",")
+        for (let i = 0; i < ids.length;i++) {
+            cart.add(JSON.parse(localStorage[ids[i] - ""]))
+        }
+    }
+}
+
+runLocalStorage()
 
