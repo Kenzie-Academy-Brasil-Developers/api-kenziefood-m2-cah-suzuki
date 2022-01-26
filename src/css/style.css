@@ -1,5 +1,5 @@
 /* FONTS IMPORTS */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 /* VARIABLES */
@@ -173,12 +173,12 @@ figcaption{
 }
 
 .products-description{
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
     color: rgba(0, 0, 0, 0.5);
     font-size: 12px;
     line-height: 16px;
-    margin-top: 30px;
+    margin-top: 16px;
     
 }
 
@@ -191,6 +191,9 @@ figcaption{
 .produtcts-price{
     margin-top: 10px ;
     align-self: flex-start;
+    color: black;
+    font-weight: 700;
+    font-size: 12px;
 }
 .button-add-cart{
     width: 35px;
@@ -340,6 +343,7 @@ figcaption{
         height: 400px;
         color: #FFFFFF;
         margin: auto;
+        overflow-x: scroll;
     }
     .quantidade p {
         padding-left: 170px;
@@ -411,8 +415,40 @@ figcaption{
        max-width: 270px;
     }
 
+    .nav-filters button figure{
+        margin-right: 16px;
+
+    }
+
     .list-products{
         flex-flow: row wrap;
+    }
+
+    .products-category{
+        height: 30px;
+        background-color: #FFE9EE;
+        max-width: 90px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        color: black;
+        font-weight: normal;
+        font-size: 11px;
+        justify-content: space-evenly;
+        padding-left: 11px;
+        padding-right: 11px;
+        order: revert;
+        flex-direction: row-reverse;
+        transform: translate(10px, -15px);
+    }
+/* 
+    .products-category img{
+        margin-right: 10px;
+    } */
+
+    .products-img{
+        border: solid 3px #FFE9EE;
+        border-radius: 10px;
     }
 
     .products{

@@ -1,5 +1,6 @@
 
 const productList = []
+const myProductList = []
 let elementId = []
 const listProducts  = document.getElementById("list-products")
 const navFilters    = document.getElementById("nav-filters")
@@ -9,11 +10,13 @@ function createLayout(data){
   const products      = document.createElement("li")
   const imgProducts   = document.createElement("img")
   const spanCategory  = document.createElement("span")
+  const imgSpanCategory = document.createElement("img")
   const titleProducts = document.createElement("h2")
   const descProducts  = document.createElement("p")
   const divBuy        = document.createElement("div")
   const spanPrice     = document.createElement("span")
   const buttonToCart  = document.createElement("button")
+  const imgButtonToCart = document.createElement("img")
 
   products.classList.add("products")
   imgProducts.classList.add("products-img")
@@ -24,15 +27,17 @@ function createLayout(data){
   spanPrice.classList.add("produtcts-price")
   buttonToCart.classList.add("button-add-cart")
   buttonToCart.id = "id" + (element.id + "")
+  imgButtonToCart.src = "../src/assets/shopping-cart-green.png" 
+  imgSpanCategory.src = "../src/assets/" + element.category + ".png"
 
   imgProducts.src         = element.photo
   spanCategory.innerText  = element.category
   titleProducts.innerText = element.name
   descProducts.innerText  = element.description
-  spanPrice.innerText     = element.price
+  spanPrice.innerText     = "R$ " + element.price.toFixed(2).toString().replace(".", ",")
   
-
-
+  spanCategory.appendChild(imgSpanCategory)
+  buttonToCart.appendChild(imgButtonToCart)
   listProducts.appendChild(products)
   products.appendChild(imgProducts)
   products.appendChild(spanCategory)
@@ -128,13 +133,13 @@ listProducts.addEventListener("click", (evn) => {
 
 })
 
-let post = new ApiClass().postProdutos({
-  "nome": "Bolinho",
-	"preco": 5,
-	"categoria": "Doce",
-	"imagem": "https://picsum.photos/200/300",
-	"descricao" : "Lorem ipsum"
-})
+// let post = new ApiClass().postProdutos({
+//   "nome": "Bolinho",
+// 	"preco": 5,
+// 	"categoria": "Doce",
+// 	"imagem": "https://picsum.photos/200/300",
+// 	"descricao" : "Lorem ipsum"
+// })
 
 let getMyProduct = new ApiClass().getMeusProdutos().then((products)=>{
 
@@ -147,9 +152,9 @@ let getMyProduct = new ApiClass().getMeusProdutos().then((products)=>{
                                          products[i].id,
                                          products[i].updatedAt,
                                          products[i]. createdAt)
-      productList.push(productTemporary)                  
+      myProductList.push(productTemporary)                  
   }
-  console.log(productList)
+  console.log(myProductList)
 })
 
 
