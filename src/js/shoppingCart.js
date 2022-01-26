@@ -38,14 +38,14 @@ class ShoppingCart{
         button.className = "delete-button"
         buttonimg.id = product.id
         button.id = product.id
-
-
+       
+    
         let span = document.createElement("span")
         span.innerText = product.category
 
         let p = document.createElement("p")
         
-        p.innerText = "R$" + product.price
+        p.innerText = "R$ " + product.price.toFixed(2).toString().replace(".", ",")
 
         this.productList.push(product)
         
@@ -78,17 +78,13 @@ class ShoppingCart{
        if(this.productList.length === 0) {
         let div1 = document.createElement("div")
         div1.className = "carrinho-no-product"
-        let div2 = document.createElement("div")
-        div2.className = "carrinho-desenho-caixa"
-        let div3 = document.createElement("div")
-        div3.className = "carrinho-desenho-dentro-da-caixa"
+        let imgCarrinhoNoProduct = document.createElement("img")
+        imgCarrinhoNoProduct.src = "../src/assets/shopping-bag.png"
         let h2box = document.createElement("h2")
         h2box.innerText = "Ops!"
         let pbox = document.createElement("p")
         pbox.innerText = "Por enquanto não temos produtos no carrinho"
-
-        div1.appendChild(div2)
-        div2.appendChild(div3)
+        div1.appendChild(imgCarrinhoNoProduct)
         div1.appendChild(h2box)
         div1.appendChild(pbox)
         ul[0].appendChild(div1)
@@ -108,7 +104,9 @@ class ShoppingCart{
 }
 
 let cart = new ShoppingCart()
+
 let quantidade = document.getElementById("quantidade")
+
 let ul = document.getElementsByClassName("ul-carrinho")
 ul[0].addEventListener('click', (evt) =>{
     let id = evt.target.id
@@ -121,7 +119,9 @@ ul[0].addEventListener('click', (evt) =>{
     currentItens(cart)
     currentPrice(cart)
 })
+
 let price = document.getElementById("price")
+
 function currentItens(cart) {
     quantidade.innerText = cart.showproducts().length
 }
@@ -130,9 +130,10 @@ function currentPrice (cart) {
     for(let i = 0; i < cart.showproducts().length; i++) {
         result += cart.showproducts()[i].price
     }
-    price.innerText = "R$" + (result + "")
+    price.innerText = "R$ " + result.toFixed(2).toString().replace(".", ",") 
     return result
 }
+
 
 const runLocalStorage = () => {
     if (localStorage.length > 0) {
