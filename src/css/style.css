@@ -36,6 +36,15 @@ body{
 figcaption{
   display: none;
 }
+
+.quantidade.hide{
+  display: none;
+}
+
+.total.hide{
+    display: none;
+}
+
 /* CONTAINER PESQUISA */
 
 .container-pesquisa{  
@@ -55,6 +64,10 @@ figcaption{
     margin-top: 15.48px;
 }
 
+.form-search:hover{
+    border: 1.5px solid black;
+}
+
 .input-search{
     width: 270px;
     height: 45px;
@@ -72,6 +85,14 @@ figcaption{
     border: none;  
 }
 
+.button-search:hover{
+    background-color: #FF2253;
+}
+
+.nav-filters button:hover{
+    border: 1.5px solid black;
+}
+
 /* CONTAINER PRODUCTS */
 
 .container-produtos{
@@ -81,8 +102,8 @@ figcaption{
 .nav-filters{
     display: flex;
     overflow-y: scroll;
-    margin-top: 16.48px;
-    margin-left: 12px;
+    margin-top: 40px;
+    margin-left: 25px;
     font-size: 14px;
     font-family: 'Inter', sans-serif;   
 }
@@ -95,7 +116,6 @@ figcaption{
     align-items: center;
     padding: 15px;
     background-color: var(--button-filter-all-color);
-    border: 1.5px solid #212529;
     box-sizing: border-box;
     border-radius: 30px;
 }
@@ -205,6 +225,10 @@ figcaption{
    align-self: flex-end;
 }
 
+.button-add-cart:hover{
+    background-color: #4ACA94;
+}
+
 /* CONTAINER CART */
 /* .container-carrinho{
     max-width: 300px;
@@ -215,7 +239,8 @@ figcaption{
     height: 400px;
     color: #FFFFFF;
     margin: auto;
-    background-color: #F8F9FA;
+    background-color:white;
+    font-family: 'Poppins', sans-serif;
 }
 
 .carrinho {
@@ -250,6 +275,7 @@ figcaption{
 .photo {
     width: 60px;
     height: 60px;
+    border-radius: 8px;
 }
 
 .carrinho-product h2 {
@@ -258,6 +284,7 @@ figcaption{
 .carrinho-product-description {
     line-height: 13px;
     margin-left: 7px;
+    max-width: 150px;
 }
 
 .carrinho-product-description h2 button {
@@ -265,35 +292,34 @@ figcaption{
     right: 15px;
     border: unset;
     background-color: #F8F9FA;
+    padding: 8px;
+    border-radius: 4px;
+    top: 5px;
 }
 .carrinho-product-description p {
     margin-top: 5px;
 }
 
 .quantidade {
-    background-color: #F8F9FA;
+    background-color: white;
     height: 30px;
     padding-top: 20px;
     display: flex;
+    justify-content: space-between;
 }
 .quantidade p {
-    padding-left: 230px;
     font-weight: bold;
 }
-.quantidade h2{
-    padding-left: 20px;
-}
+
 
 .total {
     display: flex;
     margin-top: 20px;
-}
-.total h2 {
-    padding-left: 20px;
+    justify-content: space-between;
 }
 
+
 .total p {
-    padding-left: 250px;
     font-weight: bold;
     font-size: 14px;
 }
@@ -315,9 +341,16 @@ figcaption{
     border-bottom: 4px solid #868E96;
     border-radius: 100%;
 }
+
+
 .carrinho-no-product {
-    height: 200px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: stretch;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 .carrinho-no-product h2 {
     color: #868E96;
@@ -339,18 +372,18 @@ figcaption{
     }
 
     .container-carrinho {
-        width: 300px;
-        height: 400px;
+       max-width: 320px;
+       min-width: 250px;
+        height: 467px;
         color: #FFFFFF;
         margin: auto;
         overflow-x: scroll;
+        margin-top: 40px;
+        margin-right: 115px;
+
     }
-    .quantidade p {
-        padding-left: 170px;
-    }
-    .total p {
-        padding-left: 190px;
-    }
+ 
+  
 
 }
 
@@ -370,7 +403,7 @@ figcaption{
     } */
 
     body{
-        background-color: var(--background-body-desktop);
+        background-color: white;
     }
 
     .container-pesquisa{
@@ -396,7 +429,7 @@ figcaption{
        display: flex;
        align-items: center;
        justify-content: space-between;
-       padding-left: 115px;
+       padding-left: 30px;
        padding-right: 115px;
        background-color: #FFFFFF;
     }
@@ -416,12 +449,13 @@ figcaption{
     }
 
     .nav-filters button figure{
-        margin-right: 16px;
+        margin-right: 23px;
 
     }
 
     .list-products{
         flex-flow: row wrap;
+        height: 830px;
     }
 
     .products-category{
@@ -441,10 +475,10 @@ figcaption{
         flex-direction: row-reverse;
         transform: translate(10px, -15px);
     }
-/* 
+
     .products-category img{
         margin-right: 10px;
-    } */
+    }
 
     .products-img{
         border: solid 3px #FFE9EE;
@@ -453,6 +487,7 @@ figcaption{
 
     .products{
         width: 300px;
+        margin-bottom: 80px;
     }
 
     h2 {
