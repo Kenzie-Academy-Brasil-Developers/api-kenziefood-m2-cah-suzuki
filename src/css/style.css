@@ -30,6 +30,7 @@
 body{
     /* overflow-y: hidden; */
     width: 100vw;
+    cursor: pointer;
 }
 
 /* CONTAINER PESQUISA */
