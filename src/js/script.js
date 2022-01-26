@@ -44,9 +44,8 @@ function createLayout(data){
   })
 }
 
+let product = new ApiClass().fetchProdutos().then((products)=>{
 
-
-var product = new ApiClass().fetchProdutos().then((products)=>{
 
     for (let i=0;i<products.length;i++){
         let productTemporary = new Product(products[i].nome,
@@ -61,7 +60,7 @@ var product = new ApiClass().fetchProdutos().then((products)=>{
     }
     console.log(productList)
     createLayout(productList)
-  })
+})
 
 
   //FILTERS
@@ -126,7 +125,35 @@ listProducts.addEventListener("click", (evn) => {
 }
   currentItens(cart)
   currentPrice(cart)
+
 })
+
+let post = new ApiClass().postProdutos({
+  "nome": "Bolinho",
+	"preco": 5,
+	"categoria": "Doce",
+	"imagem": "https://picsum.photos/200/300",
+	"descricao" : "Lorem ipsum"
+})
+
+let getMyProduct = new ApiClass().getMeusProdutos().then((products)=>{
+
+  for (let i=0;i<products.length;i++){
+      let productTemporary = new Product(products[i].nome,
+                                         products[i].imagem,
+                                         products[i].descricao,
+                                         products[i].categoria,
+                                         products[i].preco,
+                                         products[i].id,
+                                         products[i].updatedAt,
+                                         products[i]. createdAt)
+      productList.push(productTemporary)                  
+  }
+  console.log(productList)
+})
+
+
+
  
   
 
