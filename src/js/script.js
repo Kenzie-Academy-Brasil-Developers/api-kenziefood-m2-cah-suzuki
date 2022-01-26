@@ -1,10 +1,14 @@
 
+
 const productList = []
 const myProductList = []
 let elementId = []
 let api = new ApiClass()
+
 const listProducts  = document.getElementById("list-products")
 const navFilters    = document.getElementById("nav-filters")
+const formSearch    = document.getElementById("form-search")
+
 
 function createLayout(data){
   data.forEach(element => {
@@ -72,8 +76,7 @@ api.fetchProdutos().then((products)=>{
   //FILTERS
 
   function filterBakery(data){
-    const span = document.getElementsByClassName("products-category")
-    console.log(span)
+
     let filtredData = []
     data.forEach(element => {
       if(element.category == "Panificadora"){
@@ -105,12 +108,10 @@ api.fetchProdutos().then((products)=>{
   }
 navFilters.addEventListener("click", (event) => {
   if(event.target.className == "button-filter-all" ){
-    console.log("oi")
     listProducts.innerHTML = ""
     createLayout(productList)
   }
   if(event.target.className == "button-filter-bakery"){
-    console.log("oi")
     listProducts.innerHTML = ""
     filterBakery(productList)
   }
@@ -123,6 +124,26 @@ navFilters.addEventListener("click", (event) => {
     filterDrinks(productList)
   }
 })  
+
+function searchFilter(data){
+  const inputSearch   = document.getElementById("input-search")
+  const searchButton  = document.getElementById("button-search")
+  inputSearch.addEventListener("keyup", (evt)=> {
+    let typedText = evt.target.value.toLowerCase()
+   const filterProducts = data.filter((product)=>{
+     const {name} = product
+     if(name.toLowerCase().includes(typedText)){
+      return product
+     }
+   })
+   
+   listProducts.innerHTML = ""
+   createLayout(filterProducts)
+   
+  })
+ 
+}
+searchFilter(productList)
 
 //ADD PRODUCTS TO CART
 listProducts.addEventListener("click", (evn) => {
