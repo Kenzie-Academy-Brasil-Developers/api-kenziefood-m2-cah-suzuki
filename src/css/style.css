@@ -33,6 +33,9 @@ body{
     cursor: pointer;
 }
 
+figcaption{
+  display: none;
+}
 /* CONTAINER PESQUISA */
 
 .container-pesquisa{  
@@ -370,6 +373,14 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .container-logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .container-produtos{
@@ -378,11 +389,26 @@ body{
     }
 
     .header{
-        margin-top: 30px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding-left: 115px;
+       padding-right: 115px;
+       background-color: #FFFFFF;
+    }
+
+    .form-search{
+        background-color: #F8F9FA;
+        width: 312px;
+        height: 49px;
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        padding: 3px;
     }
 
     .input-search{
-        width: 311px;
+       max-width: 270px;
     }
 
     .list-products{
@@ -415,4 +441,4 @@ body{
     .list-products{
         height: 700px;
     }
-}   
+}   }
