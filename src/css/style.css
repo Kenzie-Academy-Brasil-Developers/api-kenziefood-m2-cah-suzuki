@@ -29,7 +29,9 @@
 
 body{
     /* overflow-y: hidden; */
-    width: 100vw;
+    width: 100vw; 
+}
+button{
     cursor: pointer;
 }
 
