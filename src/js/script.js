@@ -147,8 +147,14 @@ searchFilter(productList)
 
 //ADD PRODUCTS TO CART
 listProducts.addEventListener("click", (evn) => {
+  let id
   if(evn.target.className === "button-add-cart"){
-    cart.add(productList[evn.target.id.split("")[2] - 1])
+    id = evn.target.id.split("")[2] - ""
+    for(let i = 0; i < productList.length;i++) {
+      if(productList[i].id === id) {
+        cart.add(productList[i])
+      }
+    }
 }
   currentItens(cart)
   currentPrice(cart)
@@ -182,5 +188,5 @@ api.getMeusProdutos().then((products)=>{
 
 
  
-  
+ 
 
