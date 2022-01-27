@@ -32,7 +32,7 @@ function createLayout(data){
   spanPrice.classList.add("produtcts-price")
   buttonToCart.classList.add("button-add-cart")
   buttonToCart.id = "id" + (element.id + "")
-  imgSpanCategory.src = "../src/assets/" + element.category + ".png"
+  imgSpanCategory.src = "src/assets/" + element.category.toLowerCase() + ".png"
 
   imgProducts.src         = element.photo
   spanCategory.innerText  = element.category
