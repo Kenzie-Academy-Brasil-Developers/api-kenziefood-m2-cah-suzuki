@@ -167,6 +167,7 @@ listProducts.addEventListener("click", (evn) => {
 // 	"descricao" : "Lorem ipsum"
 // })
 
+//Método patch 
 // api.patchProdutos({
 //   "nome": "Bolinho Alterado de verdade",
 // 	"preco": 5,
@@ -175,6 +176,9 @@ listProducts.addEventListener("click", (evn) => {
 // 	"descricao" : "Lorem ipsum"
 // },439)
 
+api.fetchProdutosId(1).then((response)=>{
+  console.log(response)
+})
 
 api.getMeusProdutos().then((products)=>{
   // api.deleteProdutos(products[0].id) 
