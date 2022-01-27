@@ -33,7 +33,7 @@ class ShoppingCart{
 
         let button = document.createElement("button")
         let buttonimg = document.createElement("img")
-        buttonimg.src = "img/trash.png"
+        buttonimg.src = "src/img/trash.png"
         buttonimg.className = "delete-button"
         button.className = "delete-button"
         buttonimg.id = product.id
@@ -82,7 +82,7 @@ class ShoppingCart{
         let div1 = document.createElement("div")
         div1.className = "carrinho-no-product"
         let imgCarrinhoNoProduct = document.createElement("img")
-        imgCarrinhoNoProduct.src = "../src/assets/shopping-bag.png"
+        imgCarrinhoNoProduct.src = "src/assets/shopping-bag.png"
         let h2box = document.createElement("h2")
         h2box.innerText = "Ops!"
         let pbox = document.createElement("p")
