@@ -151,6 +151,8 @@ const runLocalStorage = () => {
             cart.add(JSON.parse(localStorage[ids[i] - ""]))
         }
     }
+    currentItens(cart)
+    currentPrice(cart)
 }
 
 runLocalStorage()
