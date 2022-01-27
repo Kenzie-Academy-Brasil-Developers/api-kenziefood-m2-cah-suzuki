@@ -70,7 +70,6 @@ class ShoppingCart{
         localStorage.setItem("productid", storage)
     }
     delete(evt) {
-        console.log(evt)
         let result = 0
        for (let i = 0; i < this.productList.length; i++) {
             if (this.productList[i].id === evt) {
@@ -100,13 +99,15 @@ class ShoppingCart{
         
         
     }
+    let index
     for(let i = 0; i < storage.length;i++) {
         if (storage[i] === evt) {
-            storage.splice(i,1)
-            console.log(evt)
+            index = i
         }
     }
+    storage.splice(index,1)
     localStorage.productid = storage
+
     }
     
     //TODO Métodos ADD,DELETE,Functions
@@ -156,4 +157,3 @@ const runLocalStorage = () => {
 }
 
 runLocalStorage()
-
