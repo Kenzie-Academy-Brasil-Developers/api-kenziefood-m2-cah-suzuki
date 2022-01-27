@@ -32,7 +32,9 @@ function createLayout(data){
   spanPrice.classList.add("produtcts-price")
   buttonToCart.classList.add("button-add-cart")
   buttonToCart.id = "id" + (element.id + "")
-  imgButtonToCart.src = "../src/assets/shopping-cart-green.png" 
+  imgButtonToCart.src = "../src/assets/shopping-cart-green.png"
+  imgButtonToCart.classList.add("button-add-cart-img")
+  imgButtonToCart.id = "id" + (element.id + "")
   imgSpanCategory.src = "../src/assets/" + element.category + ".png"
 
   imgProducts.src         = element.photo
@@ -148,7 +150,7 @@ searchFilter(productList)
 //ADD PRODUCTS TO CART
 listProducts.addEventListener("click", (evn) => {
   let id
-  if(evn.target.className === "button-add-cart"){
+  if(evn.target.className === "button-add-cart" || evn.target.className === "button-add-cart-img"){
     id = evn.target.id.split("")[2] - ""
     for(let i = 0; i < productList.length;i++) {
       if(productList[i].id === id) {
