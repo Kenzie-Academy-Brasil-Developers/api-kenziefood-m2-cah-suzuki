@@ -21,7 +21,7 @@ function createLayout(data){
   const divBuy        = document.createElement("div")
   const spanPrice     = document.createElement("span")
   const buttonToCart  = document.createElement("button")
-  const imgButtonToCart = document.createElement("img")
+
 
   products.classList.add("products")
   imgProducts.classList.add("products-img")
@@ -32,7 +32,6 @@ function createLayout(data){
   spanPrice.classList.add("produtcts-price")
   buttonToCart.classList.add("button-add-cart")
   buttonToCart.id = "id" + (element.id + "")
-  imgButtonToCart.src = "../src/assets/shopping-cart-green.png" 
   imgSpanCategory.src = "../src/assets/" + element.category + ".png"
 
   imgProducts.src         = element.photo
@@ -42,7 +41,6 @@ function createLayout(data){
   spanPrice.innerText     = "R$ " + element.price.toFixed(2).toString().replace(".", ",")
   
   spanCategory.appendChild(imgSpanCategory)
-  buttonToCart.appendChild(imgButtonToCart)
   listProducts.appendChild(products)
   products.appendChild(imgProducts)
   products.appendChild(spanCategory)
@@ -161,16 +159,19 @@ listProducts.addEventListener("click", (evn) => {
 
 })
 
-// api.postProdutos({
-//   "nome": "Bolinho",
-// 	"preco": 5,
-// 	"categoria": "Doce",
-// 	"imagem": "https://picsum.photos/200/300",
-// 	"descricao" : "Lorem ipsum"
-// })
+api.postProdutos({
+  "nome": "Bolinho",
+	"preco": 5,
+	"categoria": "Doce",
+	"imagem": "https://picsum.photos/200/300",
+	"descricao" : "Lorem ipsum"
+})
+
+api.fetchProdutosId()
+
 
 api.getMeusProdutos().then((products)=>{
-
+  api.deleteProdutos(products[0].id) 
   for (let i=0;i<products.length;i++){
       let productTemporary = new Product(products[i].nome,
                                          products[i].imagem,
