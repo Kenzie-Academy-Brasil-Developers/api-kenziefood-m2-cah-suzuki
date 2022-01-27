@@ -457,9 +457,10 @@ header{
     margin-bottom: 10px;
 }
 .carrinho-no-product p {
-    color: #868E96;
+    color: rgba(0, 0, 0, 0.5);
     width: 150px;
     margin: auto;
+    font-size: 12px;
 }
 @media (min-width:480px) {
 
@@ -518,7 +519,7 @@ header{
     }
 
     .container-carrinho{
-        margin-left: 50px;
+        margin-left: 20px;
    }
 
    .carrinho-product h2{
@@ -634,7 +635,7 @@ header{
     }
 
     .container-pesquisa{
-        margin-right: 250px;
+        margin-right: 180px;
     }
 
 }
