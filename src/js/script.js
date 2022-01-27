@@ -159,19 +159,25 @@ listProducts.addEventListener("click", (evn) => {
 
 })
 
-api.postProdutos({
-  "nome": "Bolinho",
-	"preco": 5,
-	"categoria": "Doce",
-	"imagem": "https://picsum.photos/200/300",
-	"descricao" : "Lorem ipsum"
-})
+// api.postProdutos({
+//   "nome": "Bolinho",
+// 	"preco": 5,
+// 	"categoria": "Doce",
+// 	"imagem": "https://picsum.photos/200/300",
+// 	"descricao" : "Lorem ipsum"
+// })
 
-api.fetchProdutosId()
+// api.patchProdutos({
+//   "nome": "Bolinho Alterado de verdade",
+// 	"preco": 5,
+// 	"categoria": "Doce",
+// 	"imagem": "https://picsum.photos/200/300",
+// 	"descricao" : "Lorem ipsum"
+// },439)
 
 
 api.getMeusProdutos().then((products)=>{
-  api.deleteProdutos(products[0].id) 
+  // api.deleteProdutos(products[0].id) 
   for (let i=0;i<products.length;i++){
       let productTemporary = new Product(products[i].nome,
                                          products[i].imagem,

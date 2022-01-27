@@ -47,24 +47,21 @@ class ApiClass{
         var listaDeProdutos = response.json()
         return listaDeProdutos
       })
-      .then(function(listaDeProdutos){
-         return listaDeProdutos
-      })
   }
 
-    // postProdutos (data) {
-    //   const response =  fetch("https://kenzie-food-api.herokuapp.com/my/product",{
-    //     method: "path",
-    //     headers:{
-    //       "Content-Type":"application/json",
-    //       Authorization:"Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImlhdCI6MTY0MzEzMjU2MywiZXhwIjoxNjQzOTk2NTYzLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.Efp7V278ellXsdZwL5o2tx1aIkIowpXymkWktRUtE-8",
-    //     },
-    //     body:JSON.stringify(data),
-    //   }).then(response => {
-    //     let produtoCriado = response.json()
-    //     return produtoCriado
-    //   })
-    // }
+    patchProdutos (data,id) {
+      const response =  fetch("https://kenzie-food-api.herokuapp.com/my/product/" + id,{
+        method: "patch",
+        headers:{
+          "Content-Type":"application/json",
+          Authorization:"Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImlhdCI6MTY0MzEzMjU2MywiZXhwIjoxNjQzOTk2NTYzLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.Efp7V278ellXsdZwL5o2tx1aIkIowpXymkWktRUtE-8",
+        },
+        body:JSON.stringify(data),
+      }).then(response => {
+        let produtoCriado = response.json()
+        return produtoCriado
+      })
+    }
 
     async deleteProdutos(id){
      let response = await fetch("https://kenzie-food-api.herokuapp.com/my/product/" + id,{
