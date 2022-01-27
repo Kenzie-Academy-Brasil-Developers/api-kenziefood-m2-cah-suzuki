@@ -38,7 +38,11 @@ class ShoppingCart{
         button.className = "delete-button"
         buttonimg.id = product.id
         button.id = product.id
-       
+       let quantidade = document.querySelector(".quantidade")
+       quantidade.classList.remove("hide")
+
+       let total = document.querySelector(".total")
+       total.classList.remove("hide")
     
         let span = document.createElement("span")
         span.innerText = product.category
@@ -88,6 +92,11 @@ class ShoppingCart{
         div1.appendChild(h2box)
         div1.appendChild(pbox)
         ul[0].appendChild(div1)
+        let quantidade = document.querySelector(".quantidade")
+        quantidade.classList.add("hide")
+ 
+        let total = document.querySelector(".total")
+        total.classList.add("hide")
         
         
     }
