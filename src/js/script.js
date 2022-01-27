@@ -21,7 +21,7 @@ function createLayout(data){
   const divBuy        = document.createElement("div")
   const spanPrice     = document.createElement("span")
   const buttonToCart  = document.createElement("button")
-
+  
 
   products.classList.add("products")
   imgProducts.classList.add("products-img")
@@ -32,11 +32,6 @@ function createLayout(data){
   spanPrice.classList.add("produtcts-price")
   buttonToCart.classList.add("button-add-cart")
   buttonToCart.id = "id" + (element.id + "")
-
-  imgButtonToCart.src = "../src/assets/shopping-cart-green.png"
-  imgButtonToCart.classList.add("button-add-cart-img")
-  imgButtonToCart.id = "id" + (element.id + "")
-
   imgSpanCategory.src = "../src/assets/" + element.category + ".png"
 
   imgProducts.src         = element.photo
