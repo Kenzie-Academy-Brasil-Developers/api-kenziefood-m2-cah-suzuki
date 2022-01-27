@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../src/css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../src/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../src/css/cadastro.css" media="screen">
+    <title>KenzieFood - Cadastro</title>
+</head>
+<body>
+    
+        <div id = "container-pesquisa" class="container-pesquisa"> 
+            <header class="header">
+                <div class="container-logo">
+                    <figure>
+                        <img src="../src/assets/logo-icon.png" alt="Logo ícone KenzieFood">
+                        <figcaption>Logo Kenzie-food</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../src/assets/logo.png" alt="Logo KenzieFood">
+                        <figcaption>Logo escrito Kenzie-food</figcaption>
+                    </figure>
+                </div>
+            </header>
+        </div>  
+        <div class="main">
+            <section id= "container-cadastro" class="container-cadastro">
+                <h2>Cadastro de Produtos</h2>
+                <form id="form-cadastro" class="form-cadastro">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: Torta de Banana">
+                    <label for="preco">Preço:</label>
+                    <input type="text" id="preco" name="preco" placeholder="Ex: 30">
+                    <label for="descricao">Descricao:</label>
+                    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                    <input type="submit" class="input-submit">
+                </form>
+            </section>
+        
+            <div class="container-produtos">
+                <ul id="list-products" class="list-products"></ul>
+            </div>
+        </div>
+   
+ <script src="../src/js/shoppingCart.js"></script>   
+ <script src="../src/js/product.js"></script>   
+ <script src="../src/js/apiClass.js"></script>   
+ <script src="../src/js/script.js"></script>   
+</body>
+</html>
